@@ -48,16 +48,17 @@ public class HexCubMap : MonoBehaviour {
     {        
         int x_offset = (gridWidth - gridWidth % 2) / 2;
         int q_min = -x_offset / 2;
-        int q_max = q_min + Mathf.Max((gridHeight - gridHeight % 2) / 2 + gridHeight % 2, (gridWidth - gridWidth % 2) / 2 + gridWidth % 2);
-
+        int q_max = q_min + Mathf.Max((gridHeight - gridHeight % 2) / 2 + gridHeight % 2 + x_offset + 1, (gridWidth - gridWidth % 2) / 2 + gridWidth % 2);
+		int q_trunc = q_min + gridHeight / 2;
 		for (int q = q_min; q <q_max; q++)
         {
+			int low = -q - x_offset +  2 * Mathf.Max (0, q - q_trunc); 
 			int high = Mathf.Min(Mathf.Max(q, -x_offset), x_offset - q + 1);
 			if (q == 0) {
 				high++;
 			}
-			Debug.Log (string.Format ("{2}: {0} -> {1}", -q - x_offset, high, q));
-            for (int r = -q - x_offset; r <  high; r++)
+			Debug.Log (string.Format ("{2}: {0} -> {1}", low, high, q));
+            for (int r = low; r <  high; r++)
             {                
                 yield return new Vector3(-q, -r, +q + r);
             }
@@ -80,6 +81,9 @@ public class HexCubMap : MonoBehaviour {
     {
 		if (gridWidth % 2 == 0) {
 			gridWidth++;
+		}
+		if (gridHeight % 2 == 1) {
+			gridHeight++;
 		}
 
         int i = 0;
