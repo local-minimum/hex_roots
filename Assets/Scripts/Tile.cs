@@ -1,7 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum TileType
+{
+	Root,
+	Meristem,
+	Nodle,
+	Hair,
+	Storage,
+	RootShoot
+}
+
 public class Tile : MonoBehaviour {
+
+	public TileType tileType;
 
     [SerializeField]
     HexCubMap map;

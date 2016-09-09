@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+public enum Neighbour {A, B, C, D, E, F}
+
 public class HexCubMap : MonoBehaviour {
 
     [Range(0, 10)]
@@ -20,6 +22,15 @@ public class HexCubMap : MonoBehaviour {
     [SerializeField]
     List<HexPos> hexes = new List<HexPos>();
 
+	Vector3[] directions = new Vector3[] {
+		new Vector3(+1, -1,  0), new Vector3(+1,  0, -1), new Vector3( 0, +1, -1),
+		new Vector3(-1, +1,  0), new Vector3(-1,  0, +1), new Vector3( 0, -1, +1)
+	};
+
+	public Vector3 cubeDirection(Neighbour neighbour) {
+		return directions[neighbour];
+	}
+			
     bool IsCubePosition(Vector3 cubePosition)
     {
         return Mathf.Abs(cubePosition.x + cubePosition.y + cubePosition.z) < almostZero;
@@ -139,4 +150,13 @@ public class HexCubMap : MonoBehaviour {
         return bestHex;
     }
 
+	public HexPos GetTile(Vector3 cubePosition) {
+
+		for (int i=0; i < hexes.Count; i++) {
+			if (hexes [i].cubePos == cubePosition) {
+				return hexes [i];
+			}
+		}
+		return null;
+	}
 }
