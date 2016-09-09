@@ -52,11 +52,11 @@ public class HexCubMap : MonoBehaviour {
 
 		for (int q = q_min; q <q_max; q++)
         {
-            int high = Mathf.Max(q, -x_offset);
+			int high = Mathf.Min(Mathf.Max(q, -x_offset), x_offset - q + 1);
 			if (q == 0) {
 				high++;
 			}
-			Debug.Log (string.Format ("{0} -> {1}", -q - x_offset, high));
+			Debug.Log (string.Format ("{2}: {0} -> {1}", -q - x_offset, high, q));
             for (int r = -q - x_offset; r <  high; r++)
             {                
                 yield return new Vector3(-q, -r, +q + r);
@@ -110,7 +110,7 @@ public class HexCubMap : MonoBehaviour {
         }
         hexes[i].cubePos = cubePosition;
         hexes[i].transform.localPosition = localPosition;
-
+		hexes [i].enabled = true;
     }
 
     public HexPos GetClosest(Vector3 worldPosition, out float bestDiff)
