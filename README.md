@@ -10,7 +10,7 @@ You will have to balance the resource economy to be able to grow and store enoug
 
 * Each tile will have a **function**, a **cost of production**, a **victory score**.
 * To survive the winter, you must obtain a certain amount of victory score before the end of the growth season.
-* The player has a hand of cards (3 - 5 depending on difficulty?) to choose from. At the end of each turn, the hand is replentished until the deck runs out.
+* The player has a hand of cards (3 - 5 depending on difficulty?) to choose from. At the end of each turn, all neutral and positiv cards in the hand are discarded (will be recycled in the deck) and the hand is replentished (if there are cards left).
 * Cards with positive **victory score** can be destroyed in exchange for **resources**, cards with zero **victory score** 
 can be destroyed but without resource gain.
 * Cards with negative **victory score** can not be destroyed and must be kept in hand or be played out on the board where they will both decrease the 
