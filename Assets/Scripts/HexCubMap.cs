@@ -45,17 +45,16 @@ public class HexCubMap : MonoBehaviour {
     }
 
     IEnumerable<Vector3> GenerateCubeCoordinates()
-    {
-        int Q = Mathf.Max(gridHeight, gridWidth);
-        int q_offset = (gridWidth - gridWidth % 2) / 2;
-
-        for (int q = -q_offset; q < Q - q_offset / 2 + 1; q++)
+    {        
+        int x_offset = (gridWidth - gridWidth % 2) / 2;
+        int q_min = -x_offset / 2;
+        int q_max = q_min + Mathf.Max((gridHeight - gridHeight % 2) / 2 + gridHeight % 2, (gridWidth - gridWidth % 2) / 2 + gridWidth % 2);
+        for (int q = q_min; q <q_max; q++)
         {
-            int high = Mathf.Min(gridWidth / 2 - q + 1, q);
-            int low = Mathf.Max(-gridWidth / 2 - q, q - gridHeight);
-            for (int r = low; r < high; r++)
+            int high = Mathf.Min((2 * q), x_offset);
+            for (int r = -x_offset; r <=  high; r++)
             {                
-                yield return new Vector3(-q, -r, r + q);
+                yield return new Vector3(-q, -r, +q + r);
             }
         }
     }
@@ -85,6 +84,7 @@ public class HexCubMap : MonoBehaviour {
         while (i < hexes.Count)
         {
             hexes[i].enabled = false;
+            i++;
         }
     }
 

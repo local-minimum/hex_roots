@@ -8,9 +8,10 @@ public class HexPos : MonoBehaviour {
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.cyan;
-        
-        Gizmos.DrawSphere(transform.position, viewScale);
-
+        if (enabled)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawSphere(transform.position, viewScale);
+        }
     }
 }
