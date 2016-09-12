@@ -61,6 +61,9 @@ public abstract class PlacementRule : MonoBehaviour {
 		}
 	}
 
+	//TODO: add reverse traversal from distanceuntil end towards start.
+	//this is the shortest cube pos path
+
 	public static bool nextNeighbours(HexPos a, HexPos b, HexCubMap map) {
 		if (proximate (a, b, map)) {
 
