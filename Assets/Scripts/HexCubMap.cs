@@ -28,7 +28,7 @@ public class HexCubMap : MonoBehaviour {
 	};
 
 	public Vector3 cubeDirection(Neighbour neighbour) {
-		return directions[neighbour];
+		return directions[(int) neighbour];
 	}
 			
     bool IsCubePosition(Vector3 cubePosition)
@@ -159,4 +159,38 @@ public class HexCubMap : MonoBehaviour {
 		}
 		return null;
 	}
+		
+	public IEnumerable<Tile> PlacedTiles() {
+		for (int i=0; i < hexes.Count; i++) {
+			if (hexes [i].enabled && hexes[i].occupant != null) {
+				yield return hexes [i].occupant;
+			}
+		}		
+	}
+
+	public IEnumerable<HexPos> OccupiedPositions() {
+		for (int i=0; i < hexes.Count; i++) {
+			if (hexes [i].enabled && !hexes[i].isFree) {
+				yield return hexes [i];
+			}
+		}			
+	}
+
+	public IEnumerable<HexPos> FreePositions() {
+		for (int i=0; i < hexes.Count; i++) {
+			if (hexes [i].enabled && hexes[i].isFree) {
+				yield return hexes [i];
+			}
+		}		
+	}
+
+	public IEnumerable<HexPos> GetNeighbours(Vector3 pos) {
+		foreach (Vector3 dir in directions) {
+			HexPos hex = GetTile (dir + pos);
+			if (hex != null && hex.enabled) {
+				yield return hex;
+			}
+		}
+	}
+
 }
