@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public enum Neighbour {A, B, C, D, E, F}
-
 public class HexCubMap : MonoBehaviour {
 
     [Range(0, 10)]
@@ -22,15 +20,6 @@ public class HexCubMap : MonoBehaviour {
     [SerializeField]
     List<HexPos> hexes = new List<HexPos>();
 
-	Vector3[] directions = new Vector3[] {
-		new Vector3(+1, -1,  0), new Vector3(+1,  0, -1), new Vector3( 0, +1, -1),
-		new Vector3(-1, +1,  0), new Vector3(-1,  0, +1), new Vector3( 0, -1, +1)
-	};
-
-	public Vector3 cubeDirection(Neighbour neighbour) {
-		return directions[(int) neighbour];
-	}
-			
     bool IsCubePosition(Vector3 cubePosition)
     {
         return Mathf.Abs(cubePosition.x + cubePosition.y + cubePosition.z) < almostZero;
@@ -49,7 +38,7 @@ public class HexCubMap : MonoBehaviour {
         }
     }
 
-    public float tileDistance(Vector3 cubePositionA, Vector3 cubePositionB)
+    public static float tileDistance(Vector3 cubePositionA, Vector3 cubePositionB)
     {
         Vector3 delta = cubePositionA - cubePositionB;
         return Mathf.Max(Mathf.Abs(delta.x), Mathf.Abs(delta.y), Mathf.Abs(delta.z));
@@ -182,15 +171,6 @@ public class HexCubMap : MonoBehaviour {
 				yield return hexes [i];
 			}
 		}		
-	}
-
-	public IEnumerable<HexPos> GetNeighbours(Vector3 pos) {
-		foreach (Vector3 dir in directions) {
-			HexPos hex = GetTile (dir + pos);
-			if (hex != null && hex.enabled) {
-				yield return hex;
-			}
-		}
 	}
 
 }
