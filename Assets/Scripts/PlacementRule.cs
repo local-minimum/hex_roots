@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public enum Occupation { Occupied, Free, Any};
+public enum Occupation { Occupied, Free, Any, LastFree};
 public enum Neighbour { A, B, C, D, E, F }
 
 
@@ -15,6 +15,56 @@ public abstract class PlacementRule : MonoBehaviour {
 			return false;
 		}
 	}
+
+    public static IEnumerable<HexPos> GetMeristems(HexCubMap map)
+    {
+        foreach(HexPos pos in map.OccupiedPositions())
+        {
+            if (pos.occupant.tileType == TileType.Meristem)
+            {
+                yield return pos;
+            }
+        }
+    }
+
+    public static Dictionary<HexPos, List<HexPos>> GetMeristemProximateList(HexCubMap map, Occupation occupation, int min = 0, int max = 2)
+    {
+        Dictionary<HexPos, List<HexPos>> dict = new Dictionary<HexPos, List<HexPos>>();
+        bool isLastFreeMode = occupation == Occupation.LastFree;
+        Occupation floodOccupation = isLastFreeMode ? Occupation.Occupied : occupation;
+
+        //Will actually look one extra in all cases in this mode.
+        if (isLastFreeMode)
+        {
+            max--;
+        }
+
+        foreach(HexPos meristem in GetMeristems(map))
+        {
+            dict[meristem] = new List<HexPos>();
+            List<List<HexPos>> flood = GetFloodFillUntil(meristem, max, map, floodOccupation);
+            for (int i=min; i<max; i++)
+            {
+                if (isLastFreeMode)
+                {
+                    for (int j = 0, l = flood[i].Count; j < l; j++) {
+                        foreach (HexPos neighbour in GetNeighbours(flood[i][j].cubePos, map))
+                        {
+                            if (neighbour.isFree && !dict[meristem].Contains(neighbour))
+                            {
+                                dict[meristem].Add(neighbour);
+                            }
+                        }
+                    }
+                } else
+                {
+                    dict[meristem].AddRange(flood[i]);
+                }
+            }
+        }
+
+        return dict;
+    }
 
 	protected List<HexPos> PermissableHexPositions(
 		HexCubMap map,
@@ -111,10 +161,43 @@ public abstract class PlacementRule : MonoBehaviour {
 		}
 	}
 
-	//TODO: add reverse traversal from distanceuntil end towards start.
-	//this is the shortest cube pos path
+    public static List<List<HexPos>> GetFloodFillUntil(HexPos start, int end, HexCubMap map, Occupation criteria)
+    {
 
-	public static bool nextNeighbours(HexPos a, HexPos b, HexCubMap map) {
+        HashSet<HexPos> visited = new HashSet<HexPos>();
+        List<List<HexPos>> fringes = new List<List<HexPos>>();
+        fringes.Add(new List<HexPos>() { start });
+
+        int k = 0;
+        while (k < end)
+        {
+            fringes.Add(new List<HexPos>());
+            k++;
+            for (int i = 0, l = fringes[k - 1].Count; i < l; i++)
+            {
+                foreach (HexPos neighbour in GetNeighbours(fringes[k - 1][i].cubePos, map))
+                {
+                    if (visited.Contains(neighbour))
+                    {
+                        continue;
+                    }
+                    visited.Add(neighbour);
+                    if (criteria == Occupation.Any || criteria == Occupation.Free && neighbour.isFree || criteria == Occupation.Occupied && !neighbour.isFree)
+                    {
+                        fringes[k].Add(neighbour);
+                    }
+                }
+            }
+            if (fringes[k].Count == 0)
+            {
+                fringes.RemoveAt(k);
+                return fringes;
+            }
+        }
+        return fringes;
+    }
+
+    public static bool nextNeighbours(HexPos a, HexPos b, HexCubMap map) {
 		if (proximate (a, b, map)) {
 
 		}
