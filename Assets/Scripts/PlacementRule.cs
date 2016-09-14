@@ -4,10 +4,31 @@ using System.Collections.Generic;
 public enum Occupation { Occupied, Free, Any, LastFree};
 public enum Neighbour { A, B, C, D, E, F }
 
+public delegate void PossiblePlacements(List<HexPos> positions, HexPos anchor);
+
 
 public abstract class PlacementRule : MonoBehaviour {
 
-	static public bool isMeristemPosition(HexCubMap map, Vector3 pos) {
+    public static event PossiblePlacements OnPossiblePlacement;
+
+    protected void Emit(List<HexPos> positions)
+    {
+        if (OnPossiblePlacement != null)
+        {
+            OnPossiblePlacement(positions, null);
+        }
+    }
+
+
+    protected void Emit(List<HexPos> positions, HexPos anchor)
+    {
+        if (OnPossiblePlacement != null)
+        {
+            OnPossiblePlacement(positions, anchor);
+        }
+    }
+
+    static public bool isMeristemPosition(HexCubMap map, Vector3 pos) {
 		Tile tile = map.GetTile (pos).occupant;
 		if (tile) {
 			return tile.tileType == TileType.Meristem;
@@ -25,6 +46,33 @@ public abstract class PlacementRule : MonoBehaviour {
                 yield return pos;
             }
         }
+    }
+
+    public static List<HexPos> RootNeighboursAtMeristemDistance(HexCubMap map, int requiredDist)
+    {
+        List<HexPos> free = (List<HexPos>) map.FreePositions();
+        List<HexPos> meristems = (List<HexPos>) GetMeristems(map);
+        List<HexPos> valid = new List<HexPos>();
+        for (int i=0, l=free.Count; i< l; i++)
+        {
+            if (BordersRoot(free[i], map) && minDistance(free[i], meristems) >= requiredDist)
+            {
+                valid.Add(free[i]);
+            }
+        }
+        return valid;
+    }
+    
+    public static bool BordersRoot(HexPos pos, HexCubMap map)
+    {
+        foreach (HexPos neighbour in GetNeighbours(pos.cubePos, map))
+        {
+            if (neighbour != null && !neighbour.isFree && neighbour.occupant.tileType == TileType.Root)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static Dictionary<HexPos, List<HexPos>> GetMeristemProximateList(HexCubMap map, Occupation occupation, int min = 0, int max = 2)
@@ -211,6 +259,21 @@ public abstract class PlacementRule : MonoBehaviour {
 	public static bool proximate(Vector3 a, Vector3 b) {
 		return distance (a, b) == 2;
 	}
+
+    public static int minDistance(HexPos pos, List<HexPos> others)
+    {
+        int dist = -1;
+        Vector3 a = pos.cubePos;
+        for (int i = 0, l=others.Count; i< l; i++)
+        {
+            int curDist = distance(a, others[i].cubePos);
+            if (dist < 0 || curDist < dist)
+            {
+                dist = curDist;
+            }
+        }
+        return dist;
+    }
 
 	public static int distance(Vector3 a, Vector3 b) {
 		return Mathf.RoundToInt((Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z)) / 2);
