@@ -11,9 +11,26 @@ public enum TileType
 	RootShoot
 }
 
+public enum TileEventType
+{
+    Drawn,
+    Activated,
+    Placed,
+    Disactivated,
+    Discarded,
+    Destroyed
+}
+
+public delegate void TileEvent(Tile tile, TileEventType eventType);
+
 public class Tile : MonoBehaviour {
 
+    public static event TileEvent OnTileEvent;
+
 	public TileType tileType;
+
+    [SerializeField]
+    Material[] materials;
 
     [SerializeField]
     HexCubMap map;
@@ -21,14 +38,50 @@ public class Tile : MonoBehaviour {
     [SerializeField, Range(0, 1)]
     float snapDistance;
 
-    [SerializeField]
-    bool trackingMouse;
+    TileEventType status = TileEventType.Drawn;
+
+    bool mustBePlaced = false;
+
+    public TileEventType Status
+    {
+        get
+        {
+            return status;
+        }
+
+        private set
+        {
+            if (status != value && OnTileEvent != null)
+            {
+                OnTileEvent(this, value);
+            }
+            status = value;
+        }
+    }
+
+    public void SetType(TileType tileType)
+    {
+        this.tileType = tileType;
+        GetComponent<Renderer>().materials[1] = materials[(int)tileType];
+    }
+
+    public void Place()
+    {
+        Status = TileEventType.Placed;
+    }
+
+    public void ReActivate()
+    {
+        mustBePlaced = true;
+        Status = TileEventType.Activated;
+    }
 
     Plane plane = new Plane(Vector3.forward, Vector3.up);
 
     float dist;
     HexPos closest;
-
+    
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -37,14 +90,14 @@ public class Tile : MonoBehaviour {
             {
                 Tile t = Instantiate(this);
                 t.transform.position = closest.transform.position;
-                t.trackingMouse = false;
+                Status = TileEventType.Placed;
             }
         }
 
     }
 
     void LateUpdate () {
-        if (trackingMouse) {
+        if (status == TileEventType.Activated) {
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float distance;

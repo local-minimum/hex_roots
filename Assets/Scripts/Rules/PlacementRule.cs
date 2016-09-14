@@ -11,6 +11,9 @@ public abstract class PlacementRule : MonoBehaviour {
 
     public static event PossiblePlacements OnPossiblePlacement;
 
+    [SerializeField]
+    protected TileType ruleFor;
+
     protected void Emit(List<HexPos> positions)
     {
         if (OnPossiblePlacement != null)
@@ -26,7 +29,7 @@ public abstract class PlacementRule : MonoBehaviour {
         {
             OnPossiblePlacement(positions, anchor);
         }
-    }
+    }    
 
     static public bool isMeristemPosition(HexCubMap map, Vector3 pos) {
 		Tile tile = map.GetTile (pos).occupant;
@@ -245,13 +248,6 @@ public abstract class PlacementRule : MonoBehaviour {
         return fringes;
     }
 
-    public static bool nextNeighbours(HexPos a, HexPos b, HexCubMap map) {
-		if (proximate (a, b, map)) {
-
-		}
-		return false;
-	}
-
 	public static bool proximate(HexPos a, HexPos b, HexCubMap map) {
 		return distance (a.cubePos, b.cubePos) == 2;
 	}
@@ -301,4 +297,51 @@ public abstract class PlacementRule : MonoBehaviour {
         }
     }
 
+    public static int CountNeighboursOfTypes(Vector3 pos, HexCubMap map, params TileType[] types)
+    {
+        int n = 0;
+        
+        foreach (HexPos neighbour in GetNeighbours(pos, map))
+        {
+            if (neighbour.isFree)
+            {
+                continue;
+            }
+
+            for (int i=0; i<types.Length; i++)
+            {
+                if (types[i] == neighbour.occupant.tileType)
+                {
+                    n++;
+                    break;
+                }
+            }    
+        }
+        return n;
+    }
+
+    void OnEnable()
+    {
+        Tile.OnTileEvent += Tile_OnTileEvent;
+    }
+
+    void OnDisable()
+    {
+        Tile.OnTileEvent -= Tile_OnTileEvent;
+    }
+
+    void OnDestroy()
+    {
+        Tile.OnTileEvent -= Tile_OnTileEvent;
+    }
+
+    private void Tile_OnTileEvent(Tile tile, TileEventType eventType)
+    {
+        if (eventType == TileEventType.Activated && tile.tileType == ruleFor)
+        {
+            Rule(HexCubMap.current, tile);
+        }
+    }
+
+    protected abstract void Rule(HexCubMap map, Tile tile);
 }

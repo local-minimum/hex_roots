@@ -3,6 +3,20 @@ using System.Collections.Generic;
 
 public class HexCubMap : MonoBehaviour {
 
+    static HexCubMap _instance;
+
+    public static HexCubMap current
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<HexCubMap>();
+            }
+            return _instance;
+        }      
+    }
+
     [Range(0, 10)]
     public float tileScale;
 
@@ -19,6 +33,12 @@ public class HexCubMap : MonoBehaviour {
 
     [SerializeField]
     List<HexPos> hexes = new List<HexPos>();
+
+    [SerializeField]
+    List<Vector3> startPositions = new List<Vector3>();
+
+    [SerializeField]
+    List<TileType> startPositionTypes = new List<TileType>();
 
     bool IsCubePosition(Vector3 cubePosition)
     {
