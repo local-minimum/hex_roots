@@ -31,9 +31,8 @@ public class Tile : MonoBehaviour {
 
     [SerializeField]
     Material[] materials;
-
-    [SerializeField]
-    HexCubMap map;
+    
+    public HexCubMap map;
 
     [SerializeField, Range(0, 1)]
     float snapDistance;
@@ -62,7 +61,10 @@ public class Tile : MonoBehaviour {
     public void SetType(TileType tileType)
     {
         this.tileType = tileType;
-        GetComponent<Renderer>().materials[1] = materials[(int)tileType];
+        Renderer rend = GetComponent<Renderer>();
+        Material[] mats = rend.materials;
+        mats[1] = materials[(int)tileType];
+        rend.materials = mats;
     }
 
     public void Place()

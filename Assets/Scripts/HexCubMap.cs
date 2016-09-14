@@ -40,6 +40,9 @@ public class HexCubMap : MonoBehaviour {
     [SerializeField]
     List<TileType> startPositionTypes = new List<TileType>();
 
+    [SerializeField]
+    Tile tilePrefab;
+
     bool IsCubePosition(Vector3 cubePosition)
     {
         return Mathf.Abs(cubePosition.x + cubePosition.y + cubePosition.z) < almostZero;
@@ -77,7 +80,7 @@ public class HexCubMap : MonoBehaviour {
 			if (q == 0) {
 				high++;
 			}
-			Debug.Log (string.Format ("{2}: {0} -> {1}", low, high, q));
+			//Debug.Log (string.Format ("{2}: {0} -> {1}", low, high, q));
             for (int r = low; r <  high; r++)
             {                
                 yield return new Vector3(-q, -r, +q + r);
@@ -95,6 +98,7 @@ public class HexCubMap : MonoBehaviour {
             }
         }
         Generate();
+        SetupInitialFieled();
     }
 
     public void Generate()
@@ -118,6 +122,19 @@ public class HexCubMap : MonoBehaviour {
         {
             hexes[i].enabled = false;
             i++;
+        }
+    }
+
+    void SetupInitialFieled()
+    {
+        for (int i=0; i<startPositions.Count; i++)
+        {
+            Tile tile = Instantiate(tilePrefab);
+            tile.map = this;
+            tile.SetType(startPositionTypes[i]);
+            
+            HexPos pos = GetHexPos(startPositions[i]);
+            pos.occupant = tile;
         }
     }
 
@@ -159,7 +176,7 @@ public class HexCubMap : MonoBehaviour {
         return bestHex;
     }
 
-	public HexPos GetTile(Vector3 cubePosition) {
+	public HexPos GetHexPos(Vector3 cubePosition) {
 
 		for (int i=0; i < hexes.Count; i++) {
 			if (hexes [i].cubePos == cubePosition) {

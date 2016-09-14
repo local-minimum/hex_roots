@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -9, z: 0}
-  occupant: {fileID: 0}
 --- !u!1 &17295904
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -4, z: -3}
-  occupant: {fileID: 0}
 --- !u!1 &18788319
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -5, y: 7, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &18788321
 Transform:
   m_ObjectHideFlags: 0
@@ -244,7 +241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -9, y: 10, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &26603745
 Transform:
   m_ObjectHideFlags: 0
@@ -286,7 +282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -9, y: 6, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &34423316
 Transform:
   m_ObjectHideFlags: 0
@@ -341,7 +336,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -3, z: -5}
-  occupant: {fileID: 0}
 --- !u!1 &39431628
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +377,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 13, y: -11, z: -2}
-  occupant: {fileID: 0}
 --- !u!1 &51864976
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -3, y: 3, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &51864978
 Transform:
   m_ObjectHideFlags: 0
@@ -454,7 +446,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 5, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &79276024
 Transform:
   m_ObjectHideFlags: 0
@@ -509,7 +500,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -3, z: -7}
-  occupant: {fileID: 0}
 --- !u!1 &82647117
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +541,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -4, z: -5}
-  occupant: {fileID: 0}
 --- !u!1 &85081934
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 10, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &85081936
 Transform:
   m_ObjectHideFlags: 0
@@ -622,7 +610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 4, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &87725142
 Transform:
   m_ObjectHideFlags: 0
@@ -882,6 +869,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: -1, y: 1, z: 0}
   startPositionTypes: 0500000001000000
+  tilePrefab: {fileID: 114000013182577530, guid: 336a3ddbb991bc74f9c777f19ba1b2b4,
+    type: 2}
 --- !u!4 &96568230
 Transform:
   m_ObjectHideFlags: 0
@@ -1169,7 +1158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -14, z: 22}
-  occupant: {fileID: 0}
 --- !u!1 &109223898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,7 +1199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -12, z: 20}
-  occupant: {fileID: 0}
 --- !u!1 &119145975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,7 +1227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -1, y: 3, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &119145977
 Transform:
   m_ObjectHideFlags: 0
@@ -1282,7 +1268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 0, y: 1, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &148230779
 Transform:
   m_ObjectHideFlags: 0
@@ -1337,7 +1322,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -3, z: -6}
-  occupant: {fileID: 0}
 --- !u!1 &151769764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -10, y: 9, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &151769766
 Transform:
   m_ObjectHideFlags: 0
@@ -1421,7 +1404,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -9, z: -1}
-  occupant: {fileID: 0}
 --- !u!1 &158069818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,7 +1445,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -7, z: 0}
-  occupant: {fileID: 0}
 --- !u!1 &158469798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,7 +1486,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 12, y: -11, z: -1}
-  occupant: {fileID: 0}
 --- !u!1 &184385605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1527,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -15, z: 23}
-  occupant: {fileID: 0}
 --- !u!1 &193464670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1568,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -13, z: 21}
-  occupant: {fileID: 0}
 --- !u!1 &217622842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,7 +1609,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 6, z: 2}
-  occupant: {fileID: 0}
 --- !u!1 &225250654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,7 +1637,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 0, y: 3, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &225250656
 Transform:
   m_ObjectHideFlags: 0
@@ -1746,7 +1722,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -5, z: -5}
-  occupant: {fileID: 0}
 --- !u!1 &290160833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,7 +1750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -3, y: 2, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &290160835
 Transform:
   m_ObjectHideFlags: 0
@@ -1817,7 +1791,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -11, z: 18}
-  occupant: {fileID: 0}
 --- !u!4 &290791987
 Transform:
   m_ObjectHideFlags: 0
@@ -1872,7 +1845,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -8, z: -2}
-  occupant: {fileID: 0}
 --- !u!1 &307908355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1873,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 8, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &307908357
 Transform:
   m_ObjectHideFlags: 0
@@ -1943,7 +1914,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 4, z: 4}
-  occupant: {fileID: 0}
 --- !u!4 &316255848
 Transform:
   m_ObjectHideFlags: 0
@@ -1998,7 +1968,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 13, y: -9, z: -4}
-  occupant: {fileID: 0}
 --- !u!1 &322970065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +1996,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -4, y: 7, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &322970067
 Transform:
   m_ObjectHideFlags: 0
@@ -2082,7 +2050,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 12, y: -6, z: -6}
-  occupant: {fileID: 0}
 --- !u!1 &340820296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,7 +2091,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -10, z: 3}
-  occupant: {fileID: 0}
 --- !u!1 &344936743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,7 +2119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 6, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &344936745
 Transform:
   m_ObjectHideFlags: 0
@@ -2195,7 +2160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -5, y: 2, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &375664818
 Transform:
   m_ObjectHideFlags: 0
@@ -2237,7 +2201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -2, y: -1, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &381475979
 Transform:
   m_ObjectHideFlags: 0
@@ -2292,7 +2255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -4, z: -4}
-  occupant: {fileID: 0}
 --- !u!1 &400684776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,7 +2296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 11, y: -4, z: -7}
-  occupant: {fileID: 0}
 --- !u!1 &401300277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,7 +2337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -5, z: -4}
-  occupant: {fileID: 0}
 --- !u!1 &405851908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,7 +2365,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 7, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &405851910
 Transform:
   m_ObjectHideFlags: 0
@@ -2460,7 +2419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -6, z: -1}
-  occupant: {fileID: 0}
 --- !u!1 &434633194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,7 +2447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -6, y: 4, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &434633196
 Transform:
   m_ObjectHideFlags: 0
@@ -2531,7 +2488,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -3, z: 11}
-  occupant: {fileID: 0}
 --- !u!4 &441318633
 Transform:
   m_ObjectHideFlags: 0
@@ -2573,7 +2529,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -4, z: 12}
-  occupant: {fileID: 0}
 --- !u!4 &458495914
 Transform:
   m_ObjectHideFlags: 0
@@ -2628,7 +2583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -10, z: 18}
-  occupant: {fileID: 0}
 --- !u!1 &509328411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,7 +2624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -2, z: -7}
-  occupant: {fileID: 0}
 --- !u!1 &531423824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,7 +2665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: 0, z: -8}
-  occupant: {fileID: 0}
 --- !u!1 &550456988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,7 +2693,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -6, y: 5, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &550456990
 Transform:
   m_ObjectHideFlags: 0
@@ -2783,7 +2734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -1, y: 0, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &554495584
 Transform:
   m_ObjectHideFlags: 0
@@ -2838,7 +2788,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 12, y: -7, z: -5}
-  occupant: {fileID: 0}
 --- !u!1 &575889183
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,7 +2816,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 14, y: -11, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &575889185
 Transform:
   m_ObjectHideFlags: 0
@@ -2909,7 +2857,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 4, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &589803769
 Transform:
   m_ObjectHideFlags: 0
@@ -2951,7 +2898,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -2, z: 10}
-  occupant: {fileID: 0}
 --- !u!4 &600254755
 Transform:
   m_ObjectHideFlags: 0
@@ -3006,7 +2952,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 11, y: -9, z: -2}
-  occupant: {fileID: 0}
 --- !u!1 &627951684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,7 +2980,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -5, z: 13}
-  occupant: {fileID: 0}
 --- !u!4 &627951686
 Transform:
   m_ObjectHideFlags: 0
@@ -3077,7 +3021,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 1, z: 6}
-  occupant: {fileID: 0}
 --- !u!4 &638149898
 Transform:
   m_ObjectHideFlags: 0
@@ -3119,7 +3062,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 1, z: 7}
-  occupant: {fileID: 0}
 --- !u!4 &648949061
 Transform:
   m_ObjectHideFlags: 0
@@ -3161,7 +3103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -6, z: 13}
-  occupant: {fileID: 0}
 --- !u!4 &650081017
 Transform:
   m_ObjectHideFlags: 0
@@ -3203,7 +3144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -5, z: 12}
-  occupant: {fileID: 0}
 --- !u!4 &665007263
 Transform:
   m_ObjectHideFlags: 0
@@ -3258,7 +3198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 4, z: 4}
-  occupant: {fileID: 0}
 --- !u!1 &685466730
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,7 +3226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -4, y: 3, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &685466732
 Transform:
   m_ObjectHideFlags: 0
@@ -3342,7 +3280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -8, z: -1}
-  occupant: {fileID: 0}
 --- !u!1 &697236797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3384,7 +3321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 12, y: -9, z: -3}
-  occupant: {fileID: 0}
 --- !u!1 &702568140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,7 +3349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 10, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &702568142
 Transform:
   m_ObjectHideFlags: 0
@@ -3468,7 +3403,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 13, y: -10, z: -3}
-  occupant: {fileID: 0}
 --- !u!1 &726357094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3497,7 +3431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -4, y: 1, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &726357096
 Transform:
   m_ObjectHideFlags: 0
@@ -3539,7 +3472,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -2, y: 2, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &733717741
 Transform:
   m_ObjectHideFlags: 0
@@ -3594,7 +3526,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: 3, z: -10}
-  occupant: {fileID: 0}
 --- !u!1 &754105112
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,7 +3567,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -5, z: -3}
-  occupant: {fileID: 0}
 --- !u!1 &766274882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,7 +3595,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 6, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &766274884
 Transform:
   m_ObjectHideFlags: 0
@@ -3707,7 +3636,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -3, y: 6, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &775882557
 Transform:
   m_ObjectHideFlags: 0
@@ -3749,7 +3677,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -5, y: 3, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &780963820
 Transform:
   m_ObjectHideFlags: 0
@@ -3791,7 +3718,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -3, y: 1, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &783487954
 Transform:
   m_ObjectHideFlags: 0
@@ -3846,7 +3772,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 7, z: 1}
-  occupant: {fileID: 0}
 --- !u!1 &791313238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3875,7 +3800,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 7, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &791313240
 Transform:
   m_ObjectHideFlags: 0
@@ -3930,7 +3854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -1, z: 9}
-  occupant: {fileID: 0}
 --- !u!1 &810368747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3972,7 +3895,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -4, z: -6}
-  occupant: {fileID: 0}
 --- !u!1 &821678038
 GameObject:
   m_ObjectHideFlags: 0
@@ -4014,7 +3936,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 11, y: -7, z: -4}
-  occupant: {fileID: 0}
 --- !u!1 &833532027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4056,7 +3977,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 10, z: -2}
-  occupant: {fileID: 0}
 --- !u!1 &862347122
 GameObject:
   m_ObjectHideFlags: 0
@@ -4085,7 +4005,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -9, z: 16}
-  occupant: {fileID: 0}
 --- !u!4 &862347124
 Transform:
   m_ObjectHideFlags: 0
@@ -4140,7 +4059,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 3, z: 5}
-  occupant: {fileID: 0}
 --- !u!1 &884211076
 GameObject:
   m_ObjectHideFlags: 0
@@ -4169,7 +4087,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -6, y: 6, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &884211078
 Transform:
   m_ObjectHideFlags: 0
@@ -4211,7 +4128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -12, z: 19}
-  occupant: {fileID: 0}
 --- !u!4 &887976699
 Transform:
   m_ObjectHideFlags: 0
@@ -4253,7 +4169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 8, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &915261399
 Transform:
   m_ObjectHideFlags: 0
@@ -4295,7 +4210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -4, y: 4, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &930676702
 Transform:
   m_ObjectHideFlags: 0
@@ -4350,7 +4264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -7, z: -3}
-  occupant: {fileID: 0}
 --- !u!1 &947277238
 GameObject:
   m_ObjectHideFlags: 0
@@ -4392,7 +4305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 12, y: -8, z: -4}
-  occupant: {fileID: 0}
 --- !u!1 &953867610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4434,7 +4346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -11, z: 2}
-  occupant: {fileID: 0}
 --- !u!1 &978349538
 GameObject:
   m_ObjectHideFlags: 0
@@ -4476,7 +4387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -6, z: 14}
-  occupant: {fileID: 0}
 --- !u!1 &979779065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,7 +4428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: 2, z: -10}
-  occupant: {fileID: 0}
 --- !u!1 &984777487
 GameObject:
   m_ObjectHideFlags: 0
@@ -4547,7 +4456,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 2, z: 5}
-  occupant: {fileID: 0}
 --- !u!4 &984777489
 Transform:
   m_ObjectHideFlags: 0
@@ -4589,7 +4497,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 0, y: 0, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &997192261
 Transform:
   m_ObjectHideFlags: 0
@@ -4631,7 +4538,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 3, z: 4}
-  occupant: {fileID: 0}
 --- !u!4 &1004798062
 Transform:
   m_ObjectHideFlags: 0
@@ -4673,7 +4579,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 2, z: 6}
-  occupant: {fileID: 0}
 --- !u!4 &1010468504
 Transform:
   m_ObjectHideFlags: 0
@@ -4715,7 +4620,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -6, y: 9, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &1032893789
 Transform:
   m_ObjectHideFlags: 0
@@ -4770,7 +4674,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -10, z: 2}
-  occupant: {fileID: 0}
 --- !u!1 &1042897328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,7 +4702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -9, y: 8, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &1042897330
 Transform:
   m_ObjectHideFlags: 0
@@ -4920,7 +4822,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 12, y: -10, z: -2}
-  occupant: {fileID: 0}
 --- !u!1 &1072114511
 GameObject:
   m_ObjectHideFlags: 0
@@ -4962,7 +4863,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: 0, z: -9}
-  occupant: {fileID: 0}
 --- !u!1 &1099294661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5057,7 +4957,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -1, y: 4, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &1101161814
 Transform:
   m_ObjectHideFlags: 0
@@ -5099,7 +4998,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -6, y: 7, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &1107240429
 Transform:
   m_ObjectHideFlags: 0
@@ -5141,7 +5039,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 10, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &1132981457
 Transform:
   m_ObjectHideFlags: 0
@@ -5183,7 +5080,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 7, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &1133767443
 Transform:
   m_ObjectHideFlags: 0
@@ -5238,7 +5134,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -1, z: -7}
-  occupant: {fileID: 0}
 --- !u!1 &1156811688
 GameObject:
   m_ObjectHideFlags: 0
@@ -5267,7 +5162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -5, y: 4, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &1156811690
 Transform:
   m_ObjectHideFlags: 0
@@ -5322,7 +5216,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 11, z: -3}
-  occupant: {fileID: 0}
 --- !u!1 &1162501451
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,7 +5244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 5, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &1162501453
 Transform:
   m_ObjectHideFlags: 0
@@ -5406,7 +5298,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -2, z: -5}
-  occupant: {fileID: 0}
 --- !u!1 &1173136328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5448,7 +5339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -8, z: 16}
-  occupant: {fileID: 0}
 --- !u!1 &1174123531
 GameObject:
   m_ObjectHideFlags: 0
@@ -5477,7 +5367,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 0, z: 7}
-  occupant: {fileID: 0}
 --- !u!4 &1174123533
 Transform:
   m_ObjectHideFlags: 0
@@ -5532,7 +5421,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 13, y: -8, z: -5}
-  occupant: {fileID: 0}
 --- !u!1 &1180788017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5561,7 +5449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -4, y: 5, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &1180788019
 Transform:
   m_ObjectHideFlags: 0
@@ -5616,7 +5503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -7, z: -2}
-  occupant: {fileID: 0}
 --- !u!1 &1204037668
 GameObject:
   m_ObjectHideFlags: 0
@@ -5658,7 +5544,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 11, y: -10, z: -1}
-  occupant: {fileID: 0}
 --- !u!1 &1207199575
 GameObject:
   m_ObjectHideFlags: 0
@@ -5700,7 +5585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -13, z: 20}
-  occupant: {fileID: 0}
 --- !u!1 &1238633306
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,7 +5613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 1, y: 2, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &1238633308
 Transform:
   m_ObjectHideFlags: 0
@@ -5784,7 +5667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 11, y: -5, z: -6}
-  occupant: {fileID: 0}
 --- !u!1 &1259216345
 GameObject:
   m_ObjectHideFlags: 0
@@ -5826,7 +5708,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -8, z: 0}
-  occupant: {fileID: 0}
 --- !u!1 &1260886670
 GameObject:
   m_ObjectHideFlags: 0
@@ -5855,7 +5736,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -5, y: 6, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &1260886672
 Transform:
   m_ObjectHideFlags: 0
@@ -5897,7 +5777,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 3, z: 5}
-  occupant: {fileID: 0}
 --- !u!4 &1270429608
 Transform:
   m_ObjectHideFlags: 0
@@ -6039,7 +5918,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -9, z: 1}
-  occupant: {fileID: 0}
 --- !u!1 &1302981848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6081,7 +5959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 8, z: 0}
-  occupant: {fileID: 0}
 --- !u!1 &1305860053
 GameObject:
   m_ObjectHideFlags: 0
@@ -6123,7 +6000,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 11, y: -11, z: 0}
-  occupant: {fileID: 0}
 --- !u!1 &1315676350
 GameObject:
   m_ObjectHideFlags: 0
@@ -6152,7 +6028,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 5, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &1315676352
 Transform:
   m_ObjectHideFlags: 0
@@ -6207,7 +6082,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -6, z: -2}
-  occupant: {fileID: 0}
 --- !u!1 &1330707913
 GameObject:
   m_ObjectHideFlags: 0
@@ -6249,7 +6123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: 1, z: -9}
-  occupant: {fileID: 0}
 --- !u!1 &1359001038
 GameObject:
   m_ObjectHideFlags: 0
@@ -6291,7 +6164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 14, y: -10, z: -4}
-  occupant: {fileID: 0}
 --- !u!1 &1391722718
 GameObject:
   m_ObjectHideFlags: 0
@@ -6320,7 +6192,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -10, z: 17}
-  occupant: {fileID: 0}
 --- !u!4 &1391722720
 Transform:
   m_ObjectHideFlags: 0
@@ -6375,7 +6246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -1, z: -8}
-  occupant: {fileID: 0}
 --- !u!1 &1408325918
 GameObject:
   m_ObjectHideFlags: 0
@@ -6404,7 +6274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 0, z: 8}
-  occupant: {fileID: 0}
 --- !u!4 &1408325920
 Transform:
   m_ObjectHideFlags: 0
@@ -6459,7 +6328,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 11, y: -8, z: -3}
-  occupant: {fileID: 0}
 --- !u!1 &1413442142
 GameObject:
   m_ObjectHideFlags: 0
@@ -6488,7 +6356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -7, z: 14}
-  occupant: {fileID: 0}
 --- !u!4 &1413442144
 Transform:
   m_ObjectHideFlags: 0
@@ -6543,7 +6410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 2, z: 6}
-  occupant: {fileID: 0}
 --- !u!1 &1423370484
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,7 +6438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -3, z: 10}
-  occupant: {fileID: 0}
 --- !u!4 &1423370486
 Transform:
   m_ObjectHideFlags: 0
@@ -6614,7 +6479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -6, z: 13}
-  occupant: {fileID: 0}
 --- !u!4 &1433167983
 Transform:
   m_ObjectHideFlags: 0
@@ -6656,7 +6520,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -3, y: 4, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &1436838628
 Transform:
   m_ObjectHideFlags: 0
@@ -6711,7 +6574,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -3, z: 11}
-  occupant: {fileID: 0}
 --- !u!1 &1446717137
 GameObject:
   m_ObjectHideFlags: 0
@@ -6753,7 +6615,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: 1, z: -8}
-  occupant: {fileID: 0}
 --- !u!1 &1452954853
 GameObject:
   m_ObjectHideFlags: 0
@@ -6795,7 +6656,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 11, y: -6, z: -5}
-  occupant: {fileID: 0}
 --- !u!1 &1459788477
 GameObject:
   m_ObjectHideFlags: 0
@@ -6837,7 +6697,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -9, z: 17}
-  occupant: {fileID: 0}
 --- !u!1 &1465571413
 GameObject:
   m_ObjectHideFlags: 0
@@ -6866,7 +6725,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -7, z: 15}
-  occupant: {fileID: 0}
 --- !u!4 &1465571415
 Transform:
   m_ObjectHideFlags: 0
@@ -6908,7 +6766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -2, y: 5, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &1466336423
 Transform:
   m_ObjectHideFlags: 0
@@ -6963,7 +6820,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -3, z: -4}
-  occupant: {fileID: 0}
 --- !u!1 &1470426934
 GameObject:
   m_ObjectHideFlags: 0
@@ -7005,7 +6861,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -8, z: 1}
-  occupant: {fileID: 0}
 --- !u!1 &1493538718
 GameObject:
   m_ObjectHideFlags: 0
@@ -7034,7 +6889,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -6, y: 3, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &1493538720
 Transform:
   m_ObjectHideFlags: 0
@@ -7089,7 +6943,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: 0, z: -7}
-  occupant: {fileID: 0}
 --- !u!1 &1503056244
 GameObject:
   m_ObjectHideFlags: 0
@@ -7131,7 +6984,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -4, z: 12}
-  occupant: {fileID: 0}
 --- !u!1 &1508428447
 GameObject:
   m_ObjectHideFlags: 0
@@ -7160,7 +7012,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -5, y: 8, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &1508428449
 Transform:
   m_ObjectHideFlags: 0
@@ -7202,7 +7053,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -2, y: 3, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &1536388483
 Transform:
   m_ObjectHideFlags: 0
@@ -7257,7 +7107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -9, z: 2}
-  occupant: {fileID: 0}
 --- !u!1 &1548703851
 GameObject:
   m_ObjectHideFlags: 0
@@ -7286,7 +7135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -4, y: 2, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &1548703853
 Transform:
   m_ObjectHideFlags: 0
@@ -7328,7 +7176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 11, z: -3}
-  occupant: {fileID: 0}
 --- !u!4 &1573999446
 Transform:
   m_ObjectHideFlags: 0
@@ -7370,7 +7217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 0, y: 2, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &1597459243
 Transform:
   m_ObjectHideFlags: 0
@@ -7425,7 +7271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 0, z: 8}
-  occupant: {fileID: 0}
 --- !u!1 &1600880025
 GameObject:
   m_ObjectHideFlags: 0
@@ -7454,7 +7299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -5, z: 12}
-  occupant: {fileID: 0}
 --- !u!4 &1600880027
 Transform:
   m_ObjectHideFlags: 0
@@ -7509,7 +7353,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -6, z: -4}
-  occupant: {fileID: 0}
 --- !u!1 &1612437735
 GameObject:
   m_ObjectHideFlags: 0
@@ -7551,7 +7394,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -11, z: 19}
-  occupant: {fileID: 0}
 --- !u!1 &1622755270
 GameObject:
   m_ObjectHideFlags: 0
@@ -7580,7 +7422,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -2, y: 0, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &1622755272
 Transform:
   m_ObjectHideFlags: 0
@@ -7622,7 +7463,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -4, y: 6, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &1623974296
 Transform:
   m_ObjectHideFlags: 0
@@ -7664,7 +7504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 6, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &1626335369
 Transform:
   m_ObjectHideFlags: 0
@@ -7719,7 +7558,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -2, z: -8}
-  occupant: {fileID: 0}
 --- !u!1 &1630757019
 GameObject:
   m_ObjectHideFlags: 0
@@ -7748,7 +7586,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -1, y: 1, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &1630757021
 Transform:
   m_ObjectHideFlags: 0
@@ -7803,7 +7640,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -10, z: 1}
-  occupant: {fileID: 0}
 --- !u!1 &1657789699
 GameObject:
   m_ObjectHideFlags: 0
@@ -7832,7 +7668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -2, z: 9}
-  occupant: {fileID: 0}
 --- !u!4 &1657789701
 Transform:
   m_ObjectHideFlags: 0
@@ -7874,7 +7709,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -3, y: 5, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &1665125911
 Transform:
   m_ObjectHideFlags: 0
@@ -7916,7 +7750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -3, y: 0, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &1672919676
 Transform:
   m_ObjectHideFlags: 0
@@ -7958,7 +7791,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -1, y: 2, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &1681581691
 Transform:
   m_ObjectHideFlags: 0
@@ -8000,7 +7832,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -11, y: 8, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &1697498125
 Transform:
   m_ObjectHideFlags: 0
@@ -8042,7 +7873,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -1, z: 8}
-  occupant: {fileID: 0}
 --- !u!4 &1716319096
 Transform:
   m_ObjectHideFlags: 0
@@ -8097,7 +7927,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 5, z: 3}
-  occupant: {fileID: 0}
 --- !u!1 &1740734023
 GameObject:
   m_ObjectHideFlags: 0
@@ -8160,7 +7989,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 24.428001, y: 8.063001, z: -7.0660005}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1743213116
 GameObject:
   m_ObjectHideFlags: 0
@@ -8202,7 +8031,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -1, z: -6}
-  occupant: {fileID: 0}
 --- !u!1 &1743319310
 GameObject:
   m_ObjectHideFlags: 0
@@ -8231,7 +8059,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 9, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &1743319312
 Transform:
   m_ObjectHideFlags: 0
@@ -8273,7 +8100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -6, y: 8, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &1743895705
 Transform:
   m_ObjectHideFlags: 0
@@ -8315,7 +8141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 5, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &1754413424
 Transform:
   m_ObjectHideFlags: 0
@@ -8357,7 +8182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -1, z: 9}
-  occupant: {fileID: 0}
 --- !u!4 &1755572983
 Transform:
   m_ObjectHideFlags: 0
@@ -8412,7 +8236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -11, z: 1}
-  occupant: {fileID: 0}
 --- !u!1 &1776300579
 GameObject:
   m_ObjectHideFlags: 0
@@ -8441,7 +8264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -9, y: 9, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &1776300581
 Transform:
   m_ObjectHideFlags: 0
@@ -8483,7 +8305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -10, y: 8, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &1776587727
 Transform:
   m_ObjectHideFlags: 0
@@ -8525,7 +8346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 9, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &1803181425
 Transform:
   m_ObjectHideFlags: 0
@@ -8580,7 +8400,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -11, z: 4}
-  occupant: {fileID: 0}
 --- !u!1 &1824754013
 GameObject:
   m_ObjectHideFlags: 0
@@ -8609,7 +8428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -8, z: 15}
-  occupant: {fileID: 0}
 --- !u!4 &1824754015
 Transform:
   m_ObjectHideFlags: 0
@@ -8664,7 +8482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 10, y: -10, z: 0}
-  occupant: {fileID: 0}
 --- !u!1 &1852049700
 GameObject:
   m_ObjectHideFlags: 0
@@ -8706,7 +8523,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 1, z: 7}
-  occupant: {fileID: 0}
 --- !u!1 &1854870903
 GameObject:
   m_ObjectHideFlags: 0
@@ -8748,7 +8564,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 9, y: -6, z: -3}
-  occupant: {fileID: 0}
 --- !u!1 &1873453177
 GameObject:
   m_ObjectHideFlags: 0
@@ -8790,7 +8605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -2, z: 10}
-  occupant: {fileID: 0}
 --- !u!1 &1881770504
 GameObject:
   m_ObjectHideFlags: 0
@@ -8819,7 +8633,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 6, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &1881770506
 Transform:
   m_ObjectHideFlags: 0
@@ -8861,7 +8674,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 8, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &1885293133
 Transform:
   m_ObjectHideFlags: 0
@@ -8916,96 +8728,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: -5, z: -2}
-  occupant: {fileID: 0}
---- !u!1 &1899195728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1899195730}
-  - 114: {fileID: 1899195731}
-  - 33: {fileID: 1899195732}
-  - 23: {fileID: 1899195729}
-  m_Layer: 0
-  m_Name: Tile
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &1899195729
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1899195728}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: c7d9e1fa0c035294490cb3319380ef3b, type: 2}
-  - {fileID: 2100000, guid: 4ddc1c215409de14194dd83e3e25936a, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!4 &1899195730
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1899195728}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.3, y: -36.9, z: -0.87}
-  m_LocalScale: {x: 10, y: 9, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
---- !u!114 &1899195731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1899195728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3dcf708a0fbc449b7bee9be20a67ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileType: 0
-  materials:
-  - {fileID: 2100000, guid: 90683de9795dd85449a458cf76247e1e, type: 2}
-  - {fileID: 2100000, guid: d4710288e90a64d42bfbedd28f3ed147, type: 2}
-  - {fileID: 2100000, guid: 6cd3eeb411318d942add38e56eaa32ee, type: 2}
-  - {fileID: 2100000, guid: 7c085855ad8a4234bb82235e7d4791cd, type: 2}
-  - {fileID: 2100000, guid: c491fa7b8d5f72e4aaee6ad6e488f561, type: 2}
-  - {fileID: 2100000, guid: 4ddc1c215409de14194dd83e3e25936a, type: 2}
-  map: {fileID: 96568229}
-  snapDistance: 0.8
---- !u!33 &1899195732
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1899195728}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1903157974
 GameObject:
   m_ObjectHideFlags: 0
@@ -9047,7 +8769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 7, y: 2, z: -9}
-  occupant: {fileID: 0}
 --- !u!1 &1908315714
 GameObject:
   m_ObjectHideFlags: 0
@@ -9076,7 +8797,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -2, y: 4, z: -2}
-  occupant: {fileID: 0}
 --- !u!4 &1908315716
 Transform:
   m_ObjectHideFlags: 0
@@ -9184,7 +8904,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -9, y: 7, z: 2}
-  occupant: {fileID: 0}
 --- !u!4 &1931400935
 Transform:
   m_ObjectHideFlags: 0
@@ -9226,7 +8945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -10, y: 7, z: 3}
-  occupant: {fileID: 0}
 --- !u!4 &1993406018
 Transform:
   m_ObjectHideFlags: 0
@@ -9268,7 +8986,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -6, z: 14}
-  occupant: {fileID: 0}
 --- !u!4 &2014848380
 Transform:
   m_ObjectHideFlags: 0
@@ -9323,7 +9040,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 9, z: -1}
-  occupant: {fileID: 0}
 --- !u!1 &2042941287
 GameObject:
   m_ObjectHideFlags: 0
@@ -9365,7 +9081,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -5, z: 13}
-  occupant: {fileID: 0}
 --- !u!1 &2064549746
 GameObject:
   m_ObjectHideFlags: 0
@@ -9407,7 +9122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: -7, z: 15}
-  occupant: {fileID: 0}
 --- !u!1 &2064872342
 GameObject:
   m_ObjectHideFlags: 0
@@ -9436,7 +9150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: 7, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &2064872344
 Transform:
   m_ObjectHideFlags: 0
@@ -9491,7 +9204,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -7, z: -1}
-  occupant: {fileID: 0}
 --- !u!1 &2087830528
 GameObject:
   m_ObjectHideFlags: 0
@@ -9520,7 +9232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -5, y: 5, z: 0}
-  occupant: {fileID: 0}
 --- !u!4 &2087830530
 Transform:
   m_ObjectHideFlags: 0
@@ -9575,7 +9286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -2, z: -6}
-  occupant: {fileID: 0}
 --- !u!1 &2104189602
 GameObject:
   m_ObjectHideFlags: 0
@@ -9604,7 +9314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -2, y: 1, z: 1}
-  occupant: {fileID: 0}
 --- !u!4 &2104189604
 Transform:
   m_ObjectHideFlags: 0
@@ -9659,7 +9368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: 8, y: -11, z: 3}
-  occupant: {fileID: 0}
 --- !u!1 &2135052517
 GameObject:
   m_ObjectHideFlags: 0
@@ -9688,7 +9396,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -8, y: 9, z: -1}
-  occupant: {fileID: 0}
 --- !u!4 &2135052519
 Transform:
   m_ObjectHideFlags: 0
@@ -9730,7 +9437,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubePos: {x: -7, y: -4, z: 11}
-  occupant: {fileID: 0}
 --- !u!4 &2141951997
 Transform:
   m_ObjectHideFlags: 0

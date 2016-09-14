@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public enum Occupation { Occupied, Free, Any, LastFree};
 public enum Neighbour { A, B, C, D, E, F }
@@ -32,7 +33,7 @@ public abstract class PlacementRule : MonoBehaviour {
     }    
 
     static public bool isMeristemPosition(HexCubMap map, Vector3 pos) {
-		Tile tile = map.GetTile (pos).occupant;
+		Tile tile = map.GetHexPos (pos).occupant;
 		if (tile) {
 			return tile.tileType == TileType.Meristem;
 		} else {
@@ -52,15 +53,14 @@ public abstract class PlacementRule : MonoBehaviour {
     }
 
     public static List<HexPos> RootNeighboursAtMeristemDistance(HexCubMap map, int requiredDist)
-    {
-        List<HexPos> free = (List<HexPos>) map.FreePositions();
-        List<HexPos> meristems = (List<HexPos>) GetMeristems(map);
+    {        
+        List<HexPos> meristems = GetMeristems(map).ToList();
         List<HexPos> valid = new List<HexPos>();
-        for (int i=0, l=free.Count; i< l; i++)
+        foreach(HexPos free in map.FreePositions())
         {
-            if (BordersRoot(free[i], map) && minDistance(free[i], meristems) >= requiredDist)
+            if (BordersRoot(free, map) && minDistance(free, meristems) >= requiredDist)
             {
-                valid.Add(free[i]);
+                valid.Add(free);
             }
         }
         return valid;
@@ -289,7 +289,7 @@ public abstract class PlacementRule : MonoBehaviour {
     {
         foreach (Vector3 dir in directions)
         {
-            HexPos hex = map.GetTile(dir + pos);
+            HexPos hex = map.GetHexPos(dir + pos);
             if (hex != null && hex.enabled)
             {
                 yield return hex;
