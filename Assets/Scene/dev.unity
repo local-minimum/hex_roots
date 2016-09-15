@@ -3813,6 +3813,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 96568230}
   m_RootOrder: 85
+--- !u!1 &794051652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 794051654}
+  - 114: {fileID: 794051653}
+  m_Layer: 0
+  m_Name: Deck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &794051653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 794051652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b09b727e253a7246bb776f207693767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardType: 0000000001000000020000000300000004000000
+  initialCount: 0a00000001000000010000000200000001000000
+  prefab: {fileID: 114000013182577530, guid: 336a3ddbb991bc74f9c777f19ba1b2b4, type: 2}
+--- !u!4 &794051654
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 794051652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 75.7, y: -137.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &810218780
 GameObject:
   m_ObjectHideFlags: 0
@@ -8810,6 +8853,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 96568230}
   m_RootOrder: 11
+--- !u!1 &1916317243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1916317244}
+  - 114: {fileID: 1916317245}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1916317244
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1916317243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.4850397, y: -33.56477, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+--- !u!114 &1916317245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1916317243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f591dc01e7b8e4890c7e0133c2c964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xPostion: 0.532
+  bottomOffset: 0.079
+  handSize: 4
+  width: 0.632
+  deck: {fileID: 794051653}
 --- !u!1 &1928941784
 GameObject:
   m_ObjectHideFlags: 0
