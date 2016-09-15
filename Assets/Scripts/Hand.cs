@@ -36,6 +36,7 @@ public class Hand : MonoBehaviour {
             t.transform.position = Vector3.Lerp(xMin, xMax, f);
             t.transform.SetParent(transform, true);
             t.gameObject.SetActive(true);
+            t.Status = TileEventType.Drawn;
         }
 
     }

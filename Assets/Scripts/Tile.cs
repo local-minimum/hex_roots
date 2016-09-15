@@ -48,7 +48,7 @@ public class Tile : MonoBehaviour {
             return status;
         }
 
-        private set
+        set
         {
             if (status != value && OnTileEvent != null)
             {
