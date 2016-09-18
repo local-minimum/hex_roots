@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileScale: 5.4
   gridWidth: 7
-  gridHeight: 18
+  gridHeight: 14
   hexPosPrefab: {fileID: 114000012913664014, guid: 113ec2b2c457c6e45af29504c6bfe0be,
     type: 2}
   hexes:

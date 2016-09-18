@@ -136,12 +136,13 @@ public class HexPos : MonoBehaviour {
         if (!isFree || !showRotationRender)
         {
             lRend.enabled = false;
+            return;
         }
 
         Vector3[] positions = GetRotationRenderPoints();
         lRend.SetVertexCount(positions.Length);           
         lRend.SetPositions(positions);
-
+        
         if (!lRend.enabled)
         {
             lRend.enabled = true;
