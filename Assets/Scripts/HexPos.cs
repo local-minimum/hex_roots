@@ -29,6 +29,12 @@ public class HexPos : MonoBehaviour {
             value.Place();
         }
     }
+        
+	public bool isFree {
+		get {
+			return occupant == null;
+		}
+	}
 
     private int _water = 10;
 
@@ -44,11 +50,7 @@ public class HexPos : MonoBehaviour {
         return request;
     }
 
-	public bool isFree {
-		get {
-			return occupant == null;
-		}
-	}
+    public int minerals;
 
     void OnDrawGizmosSelected()
     {
