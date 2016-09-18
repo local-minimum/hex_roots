@@ -30,6 +30,20 @@ public class HexPos : MonoBehaviour {
         }
     }
 
+    private int _water = 10;
+
+    public void AddWater(int amount)
+    {
+        _water += amount;
+    }
+
+    public int ConsumeWater(int request)
+    {
+        request = Mathf.Min(_water, request);
+        _water -= request;
+        return request;
+    }
+
 	public bool isFree {
 		get {
 			return occupant == null;
