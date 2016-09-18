@@ -50,14 +50,26 @@ public class HexPos : MonoBehaviour {
         return request;
     }
 
-    public int minerals;
+    private int _minerals;
+
+    public int ConsumeMineral(int request)
+    {
+        request = Mathf.Min(_minerals, request);
+        _minerals -= request;
+        return request;
+    }
+
+    public void AddMineral(int amount)
+    {
+        _minerals += amount;
+    }
 
     int mineralsRnd = 3;
     int mineralsN = 4;
 
     void Start()
     {
-        minerals = SeedMinerals();
+        _minerals = SeedMinerals();
     }
 
     int SeedMinerals()
