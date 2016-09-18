@@ -52,6 +52,24 @@ public class HexPos : MonoBehaviour {
 
     public int minerals;
 
+    int mineralsRnd = 3;
+    int mineralsN = 4;
+
+    void Start()
+    {
+        minerals = SeedMinerals();
+    }
+
+    int SeedMinerals()
+    {
+        float v = 0;
+        for (int i = 0; i < mineralsN; i++)
+        {
+            v += Random.value * mineralsRnd;
+        }
+        return Mathf.RoundToInt(v / mineralsN);
+    }
+
     void OnDrawGizmosSelected()
     {
         if (enabled)
