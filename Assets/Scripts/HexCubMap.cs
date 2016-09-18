@@ -90,6 +90,7 @@ public class HexCubMap : MonoBehaviour {
 
     void Start()
     {
+        hexes.Clear();
         foreach (HexPos hex in GetComponentsInChildren<HexPos>())
         {
             if (!hexes.Contains(hex))
@@ -98,7 +99,7 @@ public class HexCubMap : MonoBehaviour {
             }
         }
         Generate();
-        SetupInitialFieled();
+        SetupInitialField();
     }
 
     public void Generate()
@@ -125,7 +126,7 @@ public class HexCubMap : MonoBehaviour {
         }
     }
 
-    void SetupInitialFieled()
+    void SetupInitialField()
     {
         for (int i=0; i<startPositions.Count; i++)
         {
