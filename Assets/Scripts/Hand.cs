@@ -37,6 +37,7 @@ public class Hand : MonoBehaviour {
             t.transform.SetParent(transform, true);
             t.gameObject.SetActive(true);
             t.Status = TileEventType.Drawn;
+            t.map = HexCubMap.current;
         }
 
     }

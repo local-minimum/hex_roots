@@ -14,7 +14,8 @@ public enum TileType
 public enum TileEventType
 {
     Drawn,
-    Activated,
+    HandHovered,
+    Dragged,
     Placed,
     Disactivated,
     Discarded,
@@ -75,31 +76,38 @@ public class Tile : MonoBehaviour {
     public void ReActivate()
     {
         mustBePlaced = true;
-        Status = TileEventType.Activated;
+        Status = TileEventType.Dragged;
     }
 
     Plane plane = new Plane(Vector3.forward, Vector3.up);
 
     float dist;
     HexPos closest;
-    
-    
+
+    bool _hovered = false;
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (_hovered)
         {
-            if (closest)
-            {
-                Tile t = Instantiate(this);
-                t.transform.position = closest.transform.position;
-                Status = TileEventType.Placed;
-            }
-        }
 
+            /*
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (closest)
+                {
+                    Tile t = Instantiate(this);
+                    t.transform.position = closest.transform.position;
+                    Status = TileEventType.Placed;
+                }
+            }
+            */
+
+        }
     }
 
     void LateUpdate () {
-        if (status == TileEventType.Activated) {
+        if (status == TileEventType.Dragged) {
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float distance;
@@ -133,4 +141,19 @@ public class Tile : MonoBehaviour {
         }
     }
 
+    void OnMouseEnter()
+    {
+        
+        _hovered = true;
+        if (OnTileEvent != null)
+        {
+            OnTileEvent(this, TileEventType.HandHovered);
+        }
+    }
+
+    void OnMouseExit()
+    {
+        _hovered = false;
+        map.ResetPermissablePosition();
+    }
 }

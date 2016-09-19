@@ -27,14 +27,14 @@ public class HexCubMap : MonoBehaviour {
 
     [SerializeField, Range(1, 100)]
     int gridHeight = 10;
-
+    
     [SerializeField]
     HexPos hexPosPrefab;
 
     [SerializeField]
     List<HexPos> hexes = new List<HexPos>();
 
-    [SerializeField]
+    [SerializeField]    
     List<Vector3> startPositions = new List<Vector3>();
 
     [SerializeField]
@@ -42,6 +42,14 @@ public class HexCubMap : MonoBehaviour {
 
     [SerializeField]
     Tile tilePrefab;
+
+    public void ResetPermissablePosition()
+    {
+        for (int i = 0, l = hexes.Count; i < l; i++)
+        {
+            hexes[i].acceptingTile = false;
+        }
+    }
 
     bool IsCubePosition(Vector3 cubePosition)
     {
@@ -90,6 +98,7 @@ public class HexCubMap : MonoBehaviour {
 
     void Start()
     {
+
         hexes.Clear();
         foreach (HexPos hex in GetComponentsInChildren<HexPos>())
         {
@@ -100,6 +109,29 @@ public class HexCubMap : MonoBehaviour {
         }
         Generate();
         SetupInitialField();
+    }
+
+    void OnEnable()
+    {
+        PlacementRule.OnPossiblePlacement += PlacementRule_OnPossiblePlacement;
+    }
+
+    void OnDisable()
+    {
+        PlacementRule.OnPossiblePlacement -= PlacementRule_OnPossiblePlacement;
+    }
+
+    void OnDestroy()
+    {
+        PlacementRule.OnPossiblePlacement -= PlacementRule_OnPossiblePlacement;
+    }
+
+    private void PlacementRule_OnPossiblePlacement(List<HexPos> positions, HexPos anchor)
+    {
+        for (int i=0, l=positions.Count; i< l; i++)
+        {
+            positions[i].acceptingTile = true;
+        }
     }
 
     public void Generate()

@@ -15,6 +15,14 @@ public abstract class PlacementRule : MonoBehaviour {
     [SerializeField]
     protected TileType ruleFor;
 
+    public TileType RuleFor
+    {
+        get
+        {
+            return ruleFor;
+        }
+    }
+
     protected void Emit(List<HexPos> positions)
     {
         if (OnPossiblePlacement != null)
@@ -337,11 +345,11 @@ public abstract class PlacementRule : MonoBehaviour {
 
     private void Tile_OnTileEvent(Tile tile, TileEventType eventType)
     {
-        if (eventType == TileEventType.Activated && tile.tileType == ruleFor)
+        if (eventType == TileEventType.HandHovered && tile.tileType == ruleFor)
         {
-            Rule(HexCubMap.current, tile);
+            ApplyOn(HexCubMap.current, tile);
         }
     }
 
-    protected abstract void Rule(HexCubMap map, Tile tile);
+    protected abstract void ApplyOn(HexCubMap map, Tile tile);
 }

@@ -120,7 +120,7 @@ public class HexPos : MonoBehaviour {
     LineRenderer lRend;
 
     [SerializeField]
-    bool showRotationRender = false;
+    public bool acceptingTile = false;
 
     void SetupRotationComponents()
     {
@@ -133,7 +133,7 @@ public class HexPos : MonoBehaviour {
 
     void UpdateRotationRender()
     {
-        if (!isFree || !showRotationRender)
+        if (!acceptingTile)
         {
             lRend.enabled = false;
             return;

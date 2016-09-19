@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System;
+using System.Linq;
 
 public class RootRule : PlacementRule {
 
-    protected override void Rule(HexCubMap map, Tile tile)
+    protected override void ApplyOn(HexCubMap map, Tile tile)
     {
-        List<HexPos> meristems = (List<HexPos>) GetMeristems(map);
+        List<HexPos> meristems = GetMeristems(map).ToList();
         List<HexPos> candidates = new List<HexPos>();
         for (int i=0, l=meristems.Count; i< l; i++)
         {
