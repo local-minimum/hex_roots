@@ -12,9 +12,12 @@ public class RootRule : PlacementRule {
         {
             foreach(HexPos neighbour in GetNeighbours(meristems[i].cubePos, map))
             {
-                if (CountNeighboursOfTypes(neighbour.cubePos, map, TileType.Meristem, TileType.Root, TileType.RootShoot) == 1)
+                if (neighbour.isFree)
                 {
-                    candidates.Add(neighbour);
+                    if (CountNeighboursOfTypes(neighbour.cubePos, map, TileType.Meristem, TileType.Root, TileType.RootShoot) == 1)
+                    {
+                        candidates.Add(neighbour);
+                    }
                 }
             }
         }

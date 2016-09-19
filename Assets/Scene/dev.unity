@@ -101,6 +101,9 @@ GameObject:
   - 114: {fileID: 96568229}
   - 114: {fileID: 96568231}
   - 114: {fileID: 96568232}
+  - 114: {fileID: 96568235}
+  - 114: {fileID: 96568234}
+  - 114: {fileID: 96568233}
   m_Layer: 0
   m_Name: PlayingField
   m_TagString: Untagged
@@ -377,6 +380,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleFor: 0
+--- !u!114 &96568233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96568228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca1d973bb43d1f49bc663470b4646b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ruleFor: 4
+  maxDistance: 2
+--- !u!114 &96568234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96568228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca1d973bb43d1f49bc663470b4646b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ruleFor: 3
+  maxDistance: 2
+--- !u!114 &96568235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96568228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca1d973bb43d1f49bc663470b4646b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ruleFor: 2
+  maxDistance: 2
 --- !u!1 &231126409
 GameObject:
   m_ObjectHideFlags: 0

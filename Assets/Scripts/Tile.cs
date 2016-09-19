@@ -15,6 +15,7 @@ public enum TileEventType
 {
     Drawn,
     HandHovered,
+    HandHoverCancel,
     Dragged,
     Placed,
     Disactivated,
@@ -84,13 +85,24 @@ public class Tile : MonoBehaviour {
     float dist;
     HexPos closest;
 
-    bool _hovered = false;
+    static Tile _hovered = null;
 
+    bool hovered
+    {
+        get
+        {
+            return _hovered == this;
+        }
+    }
     void Update()
     {
-        if (_hovered)
+        if (hovered)
         {
 
+            if (status == TileEventType.HandHovered && Input.GetMouseButtonDown(0))
+            {
+                Status = TileEventType.Dragged;
+            }
             /*
             if (Input.GetMouseButtonDown(0))
             {
@@ -115,7 +127,7 @@ public class Tile : MonoBehaviour {
             {
                 transform.position = ray.GetPoint(distance);
                 closest = map.GetClosest(transform.position, out dist);
-                if (Snapping)
+                if (Snapping && closest != null)
                 {
                     transform.position = closest.transform.position;
                 }
@@ -141,19 +153,38 @@ public class Tile : MonoBehaviour {
         }
     }
 
-    void OnMouseEnter()
+    void OnMouseOver()
     {
-        
-        _hovered = true;
-        if (OnTileEvent != null)
+        if (_hovered == null)
         {
-            OnTileEvent(this, TileEventType.HandHovered);
+            _hovered = this;
+            Status = TileEventType.HandHovered;
+
         }
     }
 
     void OnMouseExit()
     {
-        _hovered = false;
-        map.ResetPermissablePosition();
+        if (hovered && !Input.GetMouseButton(0)) {
+            _hovered = null;
+            map.ResetPermissablePosition();
+            Status = TileEventType.HandHoverCancel;
+        }
+    }
+
+    void OnDisable()
+    {
+        if (hovered)
+        {
+            _hovered = null;
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (hovered)
+        {
+            _hovered = null;
+        }
     }
 }

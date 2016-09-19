@@ -194,7 +194,7 @@ public class HexCubMap : MonoBehaviour {
         HexPos bestHex = null;
         foreach (HexPos hex in hexes)
         {
-            if (!hex.enabled)
+            if (!hex.enabled || !hex.acceptingTile)
             {
                 continue;
             }
