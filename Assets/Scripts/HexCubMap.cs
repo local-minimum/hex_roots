@@ -171,12 +171,10 @@ public class HexCubMap : MonoBehaviour {
 
     private void PlacementRule_OnPossiblePlacement(List<HexPos> positions, HexPos anchor)
     {
-        if (anchor == null)
+        if (anchor != null)
         {
-            return;
-        }
-
-        placements[anchor] = positions.ToArray();
+            placements[anchor] = positions.ToArray();
+        }        
         
         for (int i=0, l=positions.Count; i< l; i++)
         {
@@ -215,9 +213,8 @@ public class HexCubMap : MonoBehaviour {
             Tile tile = Instantiate(tilePrefab);
             tile.map = this;
             tile.SetType(startPositionTypes[i]);
-            
             HexPos pos = GetHexPos(startPositions[i]);
-            pos.occupant = tile;
+            tile.Place(pos);
         }
     }
 

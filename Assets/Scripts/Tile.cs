@@ -31,7 +31,8 @@ public class Tile : MonoBehaviour {
 
     public static event TileEvent OnTileEvent;
 
-	public TileType tileType;
+    [HideInInspector]
+    public TileType tileType;
 
     [SerializeField]
     Material[] materials;
@@ -203,13 +204,22 @@ public class Tile : MonoBehaviour {
 
     void OnDrawGizmosSelected()
     {
-
         if (closest)
         {
             Gizmos.color = Snapping ? Color.red : Color.gray;
             Gizmos.DrawLine(transform.position, closest.transform.position);
         }
     }
+
+    void OnDrawGizmos()
+    {
+        if (_hovered == this)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, 3);
+        }
+    }
+
 
     void OnMouseOver()
     {
@@ -233,7 +243,10 @@ public class Tile : MonoBehaviour {
     {
         if (hovered && status != TileEventType.Dragged) {
             ClearSelfHovered();
-            Status = TileEventType.HandHoverCancel;
+            if (status != TileEventType.Placed)
+            {
+                Status = TileEventType.HandHoverCancel;
+            }
         }
     }
 

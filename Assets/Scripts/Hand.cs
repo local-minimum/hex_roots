@@ -46,6 +46,7 @@ public class Hand : MonoBehaviour {
             t.name = string.Format("{0} (Tile {1})", t.tileType, totalCardsHavingPassedHand);
             t.map = HexCubMap.current;
             t.Status = TileEventType.Drawn;
+            tilesInHand.Add(t);
         }
     }
 
@@ -105,9 +106,10 @@ public class Hand : MonoBehaviour {
 
     private void Tile_OnTileEvent(Tile tile, TileEventType eventType)
     {
-        if (eventType == TileEventType.Placed)
+        if (eventType == TileEventType.Placed && tilesInHand.Contains(tile))
         {
             RefillHand(1);
+            tilesInHand.Remove(tile);
         }
     }
 }

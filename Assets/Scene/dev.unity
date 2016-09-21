@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleFor: 1
-  minDistToOther: 3
+  minDistToOther: 2
 --- !u!114 &96568232
 MonoBehaviour:
   m_ObjectHideFlags: 0
