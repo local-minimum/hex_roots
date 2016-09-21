@@ -28,20 +28,26 @@ public class Hand : MonoBehaviour {
     void Start()
     {
         PositionOnScreen();
+        RefillHand();
+    }
 
-        for (int i = 0; i< handSize; i++)
+    int totalCardsHavingPassedHand = 0;
+
+    void RefillHand(int overshoot = 0)
+    {
+        for (int i = transform.childCount; i < handSize + overshoot; i++)
         {
+            totalCardsHavingPassedHand++;
             Tile t = deck.GetCard();
             float f = i / (handSize - 1.0f);
             t.transform.position = Vector3.Lerp(xMin, xMax, f);
             t.transform.SetParent(transform, true);
             t.gameObject.SetActive(true);
+            t.name = string.Format("{0} (Tile {1})", t.tileType, totalCardsHavingPassedHand);
             t.map = HexCubMap.current;
             t.Status = TileEventType.Drawn;
         }
-
     }
-
 
     void LateUpdate()
     {
@@ -80,5 +86,28 @@ public class Hand : MonoBehaviour {
             }
         }
 
+    }
+
+    void OnEnable()
+    {
+        Tile.OnTileEvent += Tile_OnTileEvent;
+    }
+
+    void OnDisable()
+    {
+        Tile.OnTileEvent -= Tile_OnTileEvent;
+    }
+
+    void OnDestroy()
+    {
+        Tile.OnTileEvent -= Tile_OnTileEvent;
+    }
+
+    private void Tile_OnTileEvent(Tile tile, TileEventType eventType)
+    {
+        if (eventType == TileEventType.Placed)
+        {
+            RefillHand(1);
+        }
     }
 }

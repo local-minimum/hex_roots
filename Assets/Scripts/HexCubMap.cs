@@ -113,21 +113,71 @@ public class HexCubMap : MonoBehaviour {
 
     void OnEnable()
     {
+        Tile.OnTileEvent += Tile_OnTileEvent;
         PlacementRule.OnPossiblePlacement += PlacementRule_OnPossiblePlacement;
     }
 
     void OnDisable()
     {
+        Tile.OnTileEvent -= Tile_OnTileEvent;
         PlacementRule.OnPossiblePlacement -= PlacementRule_OnPossiblePlacement;
     }
 
     void OnDestroy()
     {
+        Tile.OnTileEvent -= Tile_OnTileEvent;
         PlacementRule.OnPossiblePlacement -= PlacementRule_OnPossiblePlacement;
     }
 
+
+    private void Tile_OnTileEvent(Tile tile, TileEventType eventType)
+    {
+        if (eventType == TileEventType.DragCancel || eventType == TileEventType.HandHoverCancel)
+        {
+            placements.Clear();
+        } else if (eventType == TileEventType.Placed)
+        {
+            Debug.Log("Placed " + tile);
+            if (tile.tileType == TileType.Root)
+            {
+                HexPos pos = tile.Placement;
+                Debug.Log("Looking for " + pos);
+                bool fallOut = false;
+                foreach (KeyValuePair<HexPos, HexPos[]> kvp in placements)
+                {
+                    for (int i = 0, l = kvp.Value.Length; i < l; i++)
+                    {
+                        if (kvp.Value[i] == pos)
+                        {
+                            Debug.Log("Found it with " + kvp.Key);
+                            Tile meristem = kvp.Key.occupant;
+                            tile.Place(kvp.Key);
+                            meristem.Place(pos);
+                            fallOut = true;
+                            break;
+                        }
+                    }
+                    if (fallOut)
+                    {
+                        break;
+                    }
+                }
+            }
+            placements.Clear();
+        }
+    }
+
+    Dictionary<HexPos, HexPos[]> placements = new Dictionary<HexPos, HexPos[]>();
+
     private void PlacementRule_OnPossiblePlacement(List<HexPos> positions, HexPos anchor)
     {
+        if (anchor == null)
+        {
+            return;
+        }
+
+        placements[anchor] = positions.ToArray();
+        
         for (int i=0, l=positions.Count; i< l; i++)
         {
             positions[i].acceptingTile = true;

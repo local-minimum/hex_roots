@@ -20,7 +20,9 @@ public class RootRule : PlacementRule {
                     }
                 }
             }
+            Emit(candidates, meristems[i]);
+            candidates.Clear();
         }
-        Emit(candidates);
+        
     }
 }

@@ -76,13 +76,29 @@ public class Tile : MonoBehaviour {
     public void ReActivate()
     {
         mustBePlaced = true;
+        _hovered = this;
+        Status = TileEventType.HandHovered;
         Status = TileEventType.Dragged;
+    }
+
+    public void Place(HexPos pos)
+    {
+        mustBePlaced = true;
+        closest = pos;
+        Status = TileEventType.Placed;        
     }
 
     Plane plane = new Plane(Vector3.forward, Vector3.up);
 
     float dist;
     HexPos closest;
+
+    public HexPos Placement {
+        get
+        {
+            return closest;
+        }
+    }
 
     static Tile _hovered = null;
 
@@ -171,6 +187,9 @@ public class Tile : MonoBehaviour {
                     transform.position = closest.transform.position;
                 }
             }
+        } else if (status == TileEventType.InHand)
+        {
+            closest = null;
         }
 	}
 
@@ -198,7 +217,6 @@ public class Tile : MonoBehaviour {
         {
             _hovered = this;
             Status = TileEventType.HandHovered;
-
         }
     }
 

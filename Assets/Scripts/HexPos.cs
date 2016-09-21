@@ -78,6 +78,7 @@ public class HexPos : MonoBehaviour {
 
     void Start()
     {
+        name = string.Format("HexPos ({0:0.}, {1:0.}, {2:0.})", cubePos.x, cubePos.y, cubePos.z);
         _minerals = SeedMinerals();
         SetupRotationComponents();
     }    
