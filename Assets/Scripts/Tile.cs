@@ -13,7 +13,9 @@ public enum TileType
 
 public enum TileEventType
 {
+    InDeck,
     Drawn,
+    InHand,
     HandHovered,
     HandHoverCancel,
     Dragged,
@@ -39,7 +41,7 @@ public class Tile : MonoBehaviour {
     [SerializeField, Range(0, 1)]
     float snapDistance;
 
-    TileEventType status = TileEventType.Drawn;
+    TileEventType status = TileEventType.InDeck;
 
     bool mustBePlaced = false;
     float statusChangeTime;
@@ -104,6 +106,11 @@ public class Tile : MonoBehaviour {
 
     void Update()
     {
+        if (status == TileEventType.Drawn || status == TileEventType.HandHoverCancel || status == TileEventType.DragCancel)
+        {
+            Status = TileEventType.InHand;
+        }
+
         if (hovered)
         {
 
@@ -116,15 +123,21 @@ public class Tile : MonoBehaviour {
                 if (Time.realtimeSinceStartup - statusChangeTime < clickMaxTime)
                 {
                     dragByClick = true;
-                } else if (Snapping)
-                {
-                    Status = TileEventType.Placed;
-                } else
-                {
-                    Status = TileEventType.DragCancel;
+                }
+                else {
+                    ClearSelfHovered();
+                    if (Snapping)
+                    {
+                        Status = TileEventType.Placed;
+                    }
+                    else
+                    {
+                        Status = TileEventType.DragCancel;
+                    }
                 }
             } else if (status == TileEventType.Dragged && dragByClick && Input.GetMouseButtonUp(0))
             {
+                ClearSelfHovered();
                 if (Snapping)
                 {
                     Status = TileEventType.Placed;
@@ -170,7 +183,7 @@ public class Tile : MonoBehaviour {
     {
         get
         {
-            return dist < map.tileScale * snapDistance;
+            return (closest != null) && (dist < map.tileScale * snapDistance);
         }
     }
 
@@ -186,7 +199,7 @@ public class Tile : MonoBehaviour {
 
     void OnMouseOver()
     {
-        if (_hovered == null)
+        if (_hovered == null && status == TileEventType.InHand)
         {
             _hovered = this;
             Status = TileEventType.HandHovered;
@@ -194,11 +207,19 @@ public class Tile : MonoBehaviour {
         }
     }
 
+    void ClearSelfHovered()
+    {
+        if (hovered)
+        {
+            _hovered = null;
+            map.ResetPermissablePosition();
+        }
+    }
+
     void OnMouseExit()
     {
         if (hovered && status != TileEventType.Dragged) {
-            _hovered = null;
-            map.ResetPermissablePosition();
+            ClearSelfHovered();
             Status = TileEventType.HandHoverCancel;
         }
     }

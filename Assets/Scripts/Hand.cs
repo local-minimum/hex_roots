@@ -36,8 +36,8 @@ public class Hand : MonoBehaviour {
             t.transform.position = Vector3.Lerp(xMin, xMax, f);
             t.transform.SetParent(transform, true);
             t.gameObject.SetActive(true);
-            t.Status = TileEventType.Drawn;
             t.map = HexCubMap.current;
+            t.Status = TileEventType.Drawn;
         }
 
     }
@@ -72,7 +72,12 @@ public class Hand : MonoBehaviour {
         for (int i=0, l=transform.childCount; i< l; i++)
         {
             float f = i / (handSize - 1.0f);
-            transform.GetChild(i).position = Vector3.Lerp(xMin, xMax, f);
+            Transform child = transform.GetChild(i);
+            TileEventType status = child.GetComponent<Tile>().Status;
+            if (status == TileEventType.InHand || status == TileEventType.HandHovered)
+            {
+                child.position = Vector3.Lerp(xMin, xMax, f);
+            }
         }
 
     }

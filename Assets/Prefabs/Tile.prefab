@@ -113,3 +113,4 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 4ddc1c215409de14194dd83e3e25936a, type: 2}
   map: {fileID: 0}
   snapDistance: 0.8
+  clickMaxTime: 0.2
