@@ -18,7 +18,7 @@ public enum TileEventType
     HandHoverCancel,
     Dragged,
     Placed,
-    Disactivated,
+    DragCancel,
     Discarded,
     Destroyed
 }
@@ -42,6 +42,7 @@ public class Tile : MonoBehaviour {
     TileEventType status = TileEventType.Drawn;
 
     bool mustBePlaced = false;
+    float statusChangeTime;
 
     public TileEventType Status
     {
@@ -52,6 +53,7 @@ public class Tile : MonoBehaviour {
 
         set
         {
+            statusChangeTime = Time.realtimeSinceStartup;
             if (status != value && OnTileEvent != null)
             {
                 OnTileEvent(this, value);
@@ -94,6 +96,12 @@ public class Tile : MonoBehaviour {
             return _hovered == this;
         }
     }
+
+    [SerializeField, Range(0, 1)]
+    float clickMaxTime = 0.5f;
+
+    bool dragByClick = false;
+
     void Update()
     {
         if (hovered)
@@ -101,8 +109,31 @@ public class Tile : MonoBehaviour {
 
             if (status == TileEventType.HandHovered && Input.GetMouseButtonDown(0))
             {
+                dragByClick = false;
                 Status = TileEventType.Dragged;
+            } else if(status == TileEventType.Dragged && Input.GetMouseButtonUp(0))
+            {
+                if (Time.realtimeSinceStartup - statusChangeTime < clickMaxTime)
+                {
+                    dragByClick = true;
+                } else if (Snapping)
+                {
+                    Status = TileEventType.Placed;
+                } else
+                {
+                    Status = TileEventType.DragCancel;
+                }
+            } else if (status == TileEventType.Dragged && dragByClick && Input.GetMouseButtonUp(0))
+            {
+                if (Snapping)
+                {
+                    Status = TileEventType.Placed;
+                } else
+                {
+                    Status = TileEventType.DragCancel;
+                }
             }
+
             /*
             if (Input.GetMouseButtonDown(0))
             {
@@ -165,7 +196,7 @@ public class Tile : MonoBehaviour {
 
     void OnMouseExit()
     {
-        if (hovered && !Input.GetMouseButton(0)) {
+        if (hovered && status != TileEventType.Dragged) {
             _hovered = null;
             map.ResetPermissablePosition();
             Status = TileEventType.HandHoverCancel;
