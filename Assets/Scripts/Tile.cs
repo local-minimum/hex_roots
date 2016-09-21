@@ -73,11 +73,6 @@ public class Tile : MonoBehaviour {
         rend.materials = mats;
     }
 
-    public void Place()
-    {
-        Status = TileEventType.Placed;
-    }
-
     public void ReActivate()
     {
         mustBePlaced = true;
@@ -224,8 +219,14 @@ public class Tile : MonoBehaviour {
         }
     }
 
+    void OnEnable()
+    {
+        OnTileEvent += Tile_OnTileEvent;
+    }
+
     void OnDisable()
     {
+        OnTileEvent -= Tile_OnTileEvent;
         if (hovered)
         {
             _hovered = null;
@@ -234,9 +235,25 @@ public class Tile : MonoBehaviour {
 
     void OnDestroy()
     {
+        OnTileEvent -= Tile_OnTileEvent;
         if (hovered)
         {
             _hovered = null;
+        }
+    }
+
+
+    private void Tile_OnTileEvent(Tile tile, TileEventType eventType)
+    {
+        if (tile == this && eventType == TileEventType.Placed)
+        {
+            if (closest)
+            {
+                closest.occupant = this;
+            } else
+            {
+                Status = TileEventType.DragCancel;
+            }
         }
     }
 }

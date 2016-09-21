@@ -17,16 +17,15 @@ public class HexPos : MonoBehaviour {
 
         set
         {
-            if (value != null)
+            if (_occupant != null)
             {
-                value.transform.SetParent(null);
-                value.ReActivate();
+                _occupant.transform.SetParent(null);
+                _occupant.ReActivate();
             }
-
+            
             value.transform.SetParent(transform);
             value.transform.localPosition = Vector3.zero;
             _occupant = value;
-            value.Place();
         }
     }
         
