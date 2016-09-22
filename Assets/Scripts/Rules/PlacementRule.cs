@@ -67,8 +67,7 @@ public abstract class PlacementRule : MonoBehaviour {
         foreach(HexPos free in map.FreePositions())
         {
             if (BordersRoot(free, map) && minDistance(free, meristems) >= requiredDist)
-            {
-                Debug.Log(free);
+            {                
                 valid.Add(free);
             }
         }

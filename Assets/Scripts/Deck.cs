@@ -11,6 +11,7 @@ public class Deck : MonoBehaviour {
 
     List<Tile> deck = new List<Tile>();
 
+    bool deckCreated = false;
     [SerializeField]
     Tile prefab;
 
@@ -23,7 +24,7 @@ public class Deck : MonoBehaviour {
 	
     void CreateCards()
     {
-        if (deck.Count > 0)
+        if (deckCreated)
         {
             return;
         }
@@ -40,6 +41,8 @@ public class Deck : MonoBehaviour {
             }
 
         }
+
+        deckCreated = true;
 
     }
 
@@ -66,12 +69,36 @@ public class Deck : MonoBehaviour {
         {
             return null;
         }
+        bool hasReshuffled = false;
         if (nextCard >= n)
         {
+            hasReshuffled = true;
             nextCard %= n;
             ShuffleCards();
         }
+        
+        while (!(deck[nextCard].Status == TileEventType.InDeck || deck[nextCard].Status == TileEventType.Placed))
+        {
+            nextCard++;
+            if (nextCard >= n)
+            {
+                if (hasReshuffled)
+                {
+                    // No cards remain in deck
+                    return null;
+                }
+                nextCard %= n;
+                ShuffleCards();
+                hasReshuffled = true;
+            }
+        } 
+
         Tile t = deck[nextCard];
+        if (t.Status == TileEventType.Placed)
+        {
+            t = Instantiate(t);
+            t.Status = TileEventType.InDeck;
+        }
         nextCard++;
         return t;
     }
